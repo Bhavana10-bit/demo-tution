@@ -375,6 +375,21 @@
       gap: 10px;
     }
 
+    .map-wrap {
+      margin-top: 18px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.18);
+      background: rgba(15, 23, 42, 0.45);
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      min-height: 260px;
+      border: 0;
+      display: block;
+    }
+
     .contact .btn-outline {
       background: transparent;
       color: #dbeafe;
@@ -602,6 +617,15 @@
             <a href="#home" class="btn btn-outline">Back to Top</a>
             <a href="tel:+919876543210" class="btn btn-primary">Call Now</a>
             <a href="https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20enroll%20my%20child%20at%20Achievers%20Tuition%20Center." class="btn btn-primary">Enroll Now</a>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=2nd+Floor+Main+Road+Bengaluru" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Get Directions</a>
+          </div>
+          <div class="map-wrap">
+            <iframe
+              src="https://maps.google.com/maps?q=2nd%20Floor%20Main%20Road%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Achievers Tuition Center location map">
+            </iframe>
           </div>
         </div>
       </div>
