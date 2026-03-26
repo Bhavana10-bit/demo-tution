@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achievers Tuition Center | Trusted Coaching for School Students</title>
+  <meta name="description" content="Achievers Tuition Center provides concept-focused classes, weekly assessments, and personal attention to help students improve marks and confidence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1d4ed8;
+      --primary-dark: #1e40af;
+      --primary-soft: #dbeafe;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --white: #ffffff;
+      --success: #16a34a;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.65rem, 3.3vw, 2.25rem);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 34px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border: 1px solid #bfdbfe;
+      font-size: 0.82rem;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(29, 78, 216, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--primary-dark);
+      border-color: #bfdbfe;
+    }
+
+    .btn-outline:hover {
+      box-shadow: var(--shadow);
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-wrap {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(120deg, rgba(15, 23, 42, 0.82), rgba(29, 78, 216, 0.73)),
+        url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 28px;
+      align-items: center;
+      padding: 46px 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5.2vw, 3.4rem);
+      line-height: 1.14;
+      margin-bottom: 14px;
+      max-width: 780px;
+    }
+
+    .hero .tagline {
+      font-size: clamp(1.04rem, 2.8vw, 1.24rem);
+      color: #dbeafe;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .hero .trust-copy {
+      max-width: 620px;
+      color: #e2e8f0;
+      margin-bottom: 22px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(110px, 1fr));
+      gap: 12px;
+      max-width: 520px;
+    }
+
+    .metric {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.2rem;
+      color: #f8fafc;
+      line-height: 1.1;
+    }
+
+    .metric span {
+      font-size: 0.85rem;
+      color: #e2e8f0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+      color: #0b245d;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .icon {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      margin-bottom: 12px;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .results-wrap {
+      background: linear-gradient(180deg, #eef4ff, #f8fbff);
+      border: 1px solid #dbeafe;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .result-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .result-card strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1.45rem;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .list-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 13px 14px;
+      font-weight: 500;
+    }
+
+    .testimonials {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .quote {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .quote p {
+      color: #334155;
+      margin-bottom: 10px;
+      font-size: 0.96rem;
+    }
+
+    .quote strong {
+      color: #0b245d;
+      font-size: 0.95rem;
+    }
+
+    .contact {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-top: 1px solid #1e293b;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(226, 232, 240, 0.16);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .contact-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 22px;
+    }
+
+    .contact-list li {
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    .contact-list strong {
+      color: #f8fafc;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact .btn-outline {
+      background: transparent;
+      color: #dbeafe;
+      border-color: #60a5fa;
+    }
+
+    .footer {
+      background: #020617;
+      color: #94a3b8;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.9rem;
+      border-top: 1px solid #0f172a;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.4rem;
+      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45);
+      z-index: 60;
+      transition: transform 0.2s ease;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.06);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 768px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .testimonials {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .result-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">Achievers Tuition Center</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary">Enroll Now</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="fade-up">
+          <span class="badge">Trusted by Students & Parents</span>
+          <h1>Achievers Tuition Center</h1>
+          <p class="tagline">Helping Students Achieve Academic Excellence</p>
+          <p class="trust-copy">
+            Personal guidance, concept-focused teaching, and consistent academic support to help every student
+            improve marks, confidence, and long-term performance.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Enroll Now</a>
+            <a class="btn btn-outline" href="tel:+919876543210">Call Now</a>
+          </div>
+        </div>
+        <div class="hero-metrics fade-up">
+          <div class="metric"><strong>10+ Years</strong><span>Teaching experience</span></div>
+          <div class="metric"><strong>95%</strong><span>Parents satisfaction</span></div>
+          <div class="metric"><strong>500+</strong><span>Students guided</span></div>
+          <div class="metric"><strong>Weekly</strong><span>Tests & progress tracking</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title fade-up">About Our Institute</h2>
+        <p class="section-subtitle fade-up">
+          We focus on strong fundamentals, concept clarity, and personal attention so students understand deeply
+          and perform confidently in school and competitive exams.
+        </p>
+        <div class="cards">
+          <article class="card fade-up">
+            <div class="icon">Q</div>
+            <h3>Quality Teaching</h3>
+            <p>Structured classes with expert teachers, clear explanations, and chapter-wise mastery for better learning.</p>
+          </article>
+          <article class="card fade-up">
+            <div class="icon">C</div>
+            <h3>Concept Clarity</h3>
+            <p>Step-by-step methods and regular doubt-solving to build strong understanding, not just memorization.</p>
+          </article>
+          <article class="card fade-up">
+            <div class="icon">P</div>
+            <h3>Personal Attention</h3>
+            <p>Small batch support, individual feedback, and mentoring based on each student's pace and needs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="courses">
+      <div class="container">
+        <h2 class="section-title fade-up">Courses We Offer</h2>
+        <p class="section-subtitle fade-up">Comprehensive coaching programs for school academics and exam readiness.</p>
+        <div class="cards">
+          <article class="card fade-up">
+            <h3>Primary Classes</h3>
+            <p>Strong foundation in Maths, Science, and English with activity-based learning and regular parent updates.</p>
+          </article>
+          <article class="card fade-up">
+            <h3>High School Tuition</h3>
+            <p>Board-focused preparation with chapter tests, revision plans, and targeted support for difficult subjects.</p>
+          </article>
+          <article class="card fade-up">
+            <h3>Exam Preparation</h3>
+            <p>Focused strategy, mock tests, and performance analytics for scholarship and entrance-style exams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <h2 class="section-title fade-up">Results & Achievements</h2>
+        <p class="section-subtitle fade-up">A proven track record that builds confidence for both students and parents.</p>
+        <div class="results-wrap fade-up">
+          <div class="result-grid">
+            <div class="result-card"><strong>90%+</strong><p>Students improved scores in one term</p></div>
+            <div class="result-card"><strong>50+</strong><p>School toppers guided in recent years</p></div>
+            <div class="result-card"><strong>100%</strong><p>Syllabus completion before exams</p></div>
+            <div class="result-card"><strong>Weekly</strong><p>Tests with parent progress reports</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why-us">
+      <div class="container">
+        <h2 class="section-title fade-up">Why Choose Us</h2>
+        <p class="section-subtitle fade-up">A trust-first academic environment focused on measurable progress.</p>
+        <div class="list">
+          <div class="list-item fade-up">Experienced teachers with student-friendly teaching methods</div>
+          <div class="list-item fade-up">Weekly tests and regular revisions for stronger retention</div>
+          <div class="list-item fade-up">Individual attention with one-to-one doubt support</div>
+          <div class="list-item fade-up">Proven results with transparent progress tracking</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title fade-up">What Parents & Students Say</h2>
+        <p class="section-subtitle fade-up">Real feedback from families who trusted us with their child's education.</p>
+        <div class="testimonials">
+          <article class="quote fade-up">
+            <p>"My daughter's Maths marks improved from 62 to 88 in just one term. The teachers give genuine personal attention."</p>
+            <strong>- Parent of Class 8 Student</strong>
+          </article>
+          <article class="quote fade-up">
+            <p>"The weekly tests and revision strategy helped me stay consistent. I feel much more confident before exams."</p>
+            <strong>- Rohan, Class 10</strong>
+          </article>
+          <article class="quote fade-up">
+            <p>"Clear concepts, regular updates, and disciplined study plans. This is one of the most reliable coaching centers nearby."</p>
+            <strong>- Parent of Class 6 Student</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="section-title fade-up">Contact & Enrollment</h2>
+        <p class="section-subtitle fade-up">Book a counseling session and reserve your child's seat today.</p>
+        <div class="contact-card fade-up">
+          <ul class="contact-list">
+            <li><strong>Phone:</strong> +91 98765 43210</li>
+            <li><strong>Address:</strong> 2nd Floor, Main Road, Bengaluru</li>
+            <li><strong>Timings:</strong> Monday to Saturday, 4:00 PM - 8:00 PM</li>
+          </ul>
+          <div class="contact-actions">
+            <a href="#home" class="btn btn-outline">Back to Top</a>
+            <a href="tel:+919876543210" class="btn btn-primary">Call Now</a>
+            <a href="https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20enroll%20my%20child%20at%20Achievers%20Tuition%20Center." class="btn btn-primary">Enroll Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/919876543210?text=Hi%2C%20I%20want%20to%20know%20more%20about%20your%20tuition%20programs." aria-label="Chat on WhatsApp" title="WhatsApp">W</a>
+
+  <footer class="footer">
+    <p>&copy; 2026 Achievers Tuition Center. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll(".fade-up").forEach((element) => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
